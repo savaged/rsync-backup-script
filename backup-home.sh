@@ -12,7 +12,6 @@
 
 ##### SETUP ###############################
 # specify the path TO WHERE the files should be backuped
-# TODO get this from the command line
 BACKUP_PATH="/media/${USER}/bkp/x220home/"
 
 # text files with exclude entries to show which data should not be backuped (like tmp data or the download folder)
@@ -50,8 +49,6 @@ do
  esac
 done
 
-echo "test"
-
 # make the backup
-# rsync -avlPog --delete --exclude-from $PATH_HOME_EXCLUDES $HOME $BACKUP_PATH
+rsync -avlPog --delete --exclude-from $PATH_HOME_EXCLUDES $HOME $BACKUP_PATH
 
