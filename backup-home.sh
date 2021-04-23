@@ -12,8 +12,17 @@
 
 ##### SETUP ###############################
 
-read -p "Enter the backup media name: " BACKUP_MEDIA
-read -p "Enter the folder on the backup media where the backup will be make: " BACKUP_FLDR
+read -p "Enter the backup media name (leave blank for default): " BACKUP_MEDIA
+read -p "Enter the folder on the backup media where the backup will be make (leave blank for default): " BACKUP_FLDR
+
+if [ -z "$BACKUP_MEDIA" ] 
+then
+    BACKUP_MEDIA="bkp"
+fi
+if [ -z "$BACKUP_FLDR" ] 
+then
+    BACKUP_FLDR="x220home"
+fi
 
 BACKUP_PATH="/media/${USER}/${BACKUP_MEDIA}/${BACKUP_FLDR}/"
 
